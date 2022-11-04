@@ -1,4 +1,6 @@
 #include <iostream>
+#include <stdlib.h>
+#include <cstdlib>
 
 using namespace std;
 
@@ -16,8 +18,10 @@ auto getFunction(LD x, LD y, LD m){
 }
 
 int main(){
+    //Declare Variables
     LD y1, y2, x1, x2, limitR, limitL, steps = 0;
 
+    //Recive Inputs
     cin>>y1;
     cin>>x1;
     cin>>y2;
@@ -27,13 +31,26 @@ int main(){
     cin>>limitR;
     cin>>steps;
 
+    //Get the function
     LD m = gradient(y2, y1, x2, x1);
-
     auto Y = getFunction(x1, y1, m);
 
+    //Iterate and calculate y for each x in range
     for(LD x = limitL;x<=limitR;x+=steps){
         cout<<"("<<x<<","<<Y(x)<<")"<<endl;
+        cout<<x;
     }
+
+    //Plot the line
+
+    //Get y's limits
+    LD YtopLimit = Y(limitR);
+    LD YButtonLimit = Y(limitL);
+
+    //Create a matrix
+    //LD yRange = abs(YtopLimit) + abs(YButtonLimit);
+    //LD** plane = new LD[] 
+
 
     return 0;
 }
