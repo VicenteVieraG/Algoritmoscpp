@@ -2,9 +2,9 @@
 
 main: main.o
 	g++ main.o -o main.exe
-	rm *.o
+	del *.o
 main.o: main.cpp
 	g++ main.cpp -c
 clear:
-	rm *.o
+	del *.o
 
